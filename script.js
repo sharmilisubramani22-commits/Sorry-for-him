@@ -1,4 +1,4 @@
-// Page Navigation
+        // Page Navigation
 let currentPage = 1;
 const totalPages = 7;
 
