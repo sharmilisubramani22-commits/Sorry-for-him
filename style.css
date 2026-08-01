@@ -2,18 +2,20 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
+    
 body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#fffafc,#fdeef4,#ffeff7);
-    overflow:hidden;
+    overflow-x:hidden;
     color:#444;
 }
 
+
 .page{
     width:100%;
-    height:100vh;
+    min-height:100vh;   
+    height:auto;
+    overflow-y:auto;
     display:none;
     flex-direction:column;
     justify-content:center;
