@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fffafc,#fdeef4,#ffeff7);
+    overflow:hidden;
+    color:#444;
+}
+
+.page{
+    width:100%;
+    height:100vh;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    animation:fade .8s;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    color:#ff6f91;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#ff6f91;
+    margin-bottom:20px;
+}
+
+p{
+    max-width:700px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+button{
+    margin-top:35px;
+    border:none;
+    padding:16px 35px;
+    background:#ff9bb3;
+    color:white;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(255,155,179,.35);
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff7f9d;
+}
+
+.heart-card,.star{
+    width:90%;
+    max-width:550px;
+    margin:12px;
+    padding:18px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.heart-card:hover,
+.star:hover{
+    transform:translateY(-6px);
+}
+
+.letter{
+    max-width:700px;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.scrapbook{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    transform:rotate(-2deg);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    max-width:700px;
+    font-size:20px;
+}
+
+.forgive{
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts::before,
+.hearts::after{
+    content:"❤";
+    position:absolute;
+    color:#ffb6c1;
+    font-size:28px;
+    animation:float 10s linear infinite;
+}
+
+.hearts::before{
+    left:20%;
+}
+
+.hearts::after{
+    left:70%;
+    animation-duration:13s;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) scale(.5);
+opacity:0;
+}
+
+20%{
+opacity:.8;
+}
+
+100%{
+transform:translateY(-120px) scale(1.4);
+opacity:0;
+}
+
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:34px;
+}
+
+h2{
+font-size:28px;
+}
+
+p{
+font-size:16px;
+}
+
+button{
+width:90%;
+font-size:18px;
+}
+
+.heart-card,
+.star,
+.letter,
+.scrapbook{
+width:95%;
+}
+
+}
